@@ -8,7 +8,7 @@ export default function App() {
   const [password, setPassword] = useState('');
 
   const handleLogin = () => {
-    if (email === 'test@example.com' && password === '123456') {
+    if (email === 'admin@gmail.com' && password === '123456') {
       Alert.alert('Login Successful', 'Welcome!');
     } else {
       Alert.alert('Login Failed', 'Invalid email or password');
