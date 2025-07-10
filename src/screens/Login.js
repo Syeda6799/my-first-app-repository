@@ -1,31 +1,24 @@
+
 import React, { useState } from 'react';
 import {
   View,
   Text,
   TextInput,
-  TouchableOpacity,
   StyleSheet,
   ImageBackground,
-  Alert, 
 } from 'react-native';
+
+
+import Button from "../components/Button";
 
 const SimpleLoginScreen = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
- 
-  const handleLogin = () => {
-    if (email && password && name) {
-      Alert.alert('Login Successfully');
-    } else {
-      Alert.alert('Please fill all fields');
-    }
-  };
-
   return (
     <ImageBackground
-      source={require('./assets/hhh.jpg')} 
+      source={require('./assets/hhh.jpg')}
       style={styles.background}
       resizeMode="cover"
     >
@@ -57,9 +50,7 @@ const SimpleLoginScreen = () => {
           onChangeText={setPassword}
         />
 
-        <TouchableOpacity style={styles.button} onPress={handleLogin}>
-          <Text style={styles.buttonText}>Login</Text>
-        </TouchableOpacity>
+        <LoginButton name={name} email={email} password={password} />
       </View>
     </ImageBackground>
   );
@@ -93,17 +84,5 @@ const styles = StyleSheet.create({
     padding: 12,
     marginBottom: 15,
     color: '#fff',
-  },
-  button: {
-    backgroundColor: '#4CAF50',
-    paddingVertical: 12,
-    borderRadius: 8,
-    marginTop: 10,
-  },
-  buttonText: {
-    color: '#fff',
-    textAlign: 'center',
-    fontWeight: 'bold',
-    fontSize: 16,
   },
 });
