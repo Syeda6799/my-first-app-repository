@@ -6,10 +6,8 @@ export default function Statepractice() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-
   return (
     <View style={styles.container}>
-      
       <Text style={styles.label}>{email}</Text>
       <Text style={styles.label}>{password}</Text>
 
@@ -19,13 +17,13 @@ export default function Statepractice() {
         value={email}
         onChangeText={setEmail}
       />
+
       <TextInput
         style={styles.input}
-        placeholder="Enter your pasward"
+        placeholder="Enter your password"
         value={password}
         onChangeText={setPassword}
       />
-
 
       <Button title="Login" />
     </View>
@@ -36,6 +34,8 @@ const styles = StyleSheet.create({
   container: {
     padding: 20,
     marginTop: 100,
+    backgroundColor: 'rgb(122, 25, 116)', 
+    flex: 1,
   },
   label: {
     fontSize: 18,
