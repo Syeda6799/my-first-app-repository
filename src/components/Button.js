@@ -1,36 +1,27 @@
-// LoginButton.js
 import React from 'react';
-import { TouchableOpacity, Text, StyleSheet, Alert } from 'react-native';
+import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 
-const LoginButton = ({ name, email, password }) => {
-  const handleLogin = () => {
-    if (email && password && name) {
-      Alert.alert('Login Successfully');
-    } else {
-      Alert.alert('Please fill all fields');
-    }
-  };
-
+export default function Button({ title,btnIcon, onPress, color = 'white', textColor = 'black' }) {
   return (
-    <TouchableOpacity style={styles.button} onPress={handleLogin}>
-      <Text style={styles.buttonText}>Login</Text>
+    <TouchableOpacity onPress={onPress} style={[styles.button, { backgroundColor: color }]
+    }>
+      {btnIcon}
+      <Text style={[styles.text, { color: textColor }]}>{title}</Text>
     </TouchableOpacity>
   );
-};
-
-export default LoginButton;
+}
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: '#4CAF50',
-    paddingVertical: 12,
-    borderRadius: 8,
-    marginTop: 10,
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 10,
+    marginHorizontal: 5,
+    borderRadius: 50,
   },
-  buttonText: {
-    color: '#fff',
-    textAlign: 'center',
+  text: {
+    fontSize: 20,
     fontWeight: 'bold',
-    fontSize: 16,
+    textAlign: 'center',
   },
 });
