@@ -1,6 +1,5 @@
-import React from "react";
-import Counter from "./src/screens/counter";
-
+// ✅ CORRECT
+import Listing from './src/screens/Listing';  // Capital "L"
 export default function App() {
-  return <Counter />;
+  return <Listing />;
 }
