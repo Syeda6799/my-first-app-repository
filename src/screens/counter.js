@@ -1,19 +1,18 @@
 import { View, Text, StyleSheet, Button } from 'react-native';
 import React, { useState } from 'react';
 
-const ranger = 10;
-const MIN_COUNT_LIMIT = 10;
+
 export default function Counter() {
 
-const [count, setCount] = useState(  MIN_COUNT_LIMIT );
+const [count, setCount] = useState(0);
 
 function onAddpressed() {
-setCount(count + ranger);
+setCount(count + 1);
 }
 
 function onMinuspressed() {
-  if(count -ranger  <  MIN_COUNT_LIMIT ) return;{
-setCount(count - ranger);
+  if(count -1  < 0) return;{
+setCount(count - 1);
 }}
 
 
